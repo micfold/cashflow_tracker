@@ -1,0 +1,29 @@
+Date,Description,Amount,Type,Category,Subcategory,Producer/Vendor,Payment Method,Notes
+2025-04-01,Monthly Salary,3500.00,Income,Income,Salary,Acme Corporation,Direct Deposit,Regular monthly salary
+2025-04-03,Apartment Rent,1200.00,Expense,Housing,Rent/Mortgage,Landlord,Bank Transfer,Monthly rent payment
+2025-04-05,Grocery Shopping,89.50,Expense,Food,Groceries,Kroger,Credit Card,Weekly groceries
+2025-04-07,Cash Withdrawal,100.00,Expense,Miscellaneous,Cash,ATM,Cash,Pocket money
+2025-04-10,Netflix Subscription,15.99,Expense,Entertainment,Subscriptions,Netflix,Credit Card,Monthly streaming service
+2025-04-12,Gas for Car,42.75,Expense,Transportation,Gas,Shell,Credit Card,Filled up the tank
+2025-04-15,Transfer to Savings,200.00,Expense,Savings,Emergency Fund,Bank,Bank Transfer,Monthly savings contribution
+2025-04-18,Electricity Bill,78.45,Expense,Housing,Utilities,Electric Company,Bank Transfer,Monthly utility bill
+2025-04-20,Amazon Purchase,45.75,Expense,Shopping,Online Shopping,Amazon,Credit Card,Home supplies
+2025-04-22,Coffee,4.95,Expense,Food,Restaurants,Starbucks,Credit Card,Morning coffee
+2025-04-25,Gas for Car,39.50,Expense,Transportation,Gas,Shell,Credit Card,Filled up the tank
+2025-04-27,Credit Card Payment,150.00,Expense,Debt,Credit Card,Bank,Bank Transfer,Minimum payment
+2025-04-28,Pharmacy,23.75,Expense,Personal,Healthcare,Walgreens,Credit Card,Medicine and supplies
+2025-04-30,Freelance Project,750.00,Income,Income,Freelance,Client XYZ,Direct Deposit,Website design project
+2025-05-01,Monthly Salary,3500.00,Income,Income,Salary,Acme Corporation,Direct Deposit,Regular monthly salary
+2025-05-03,Apartment Rent,1200.00,Expense,Housing,Rent/Mortgage,Landlord,Bank Transfer,Monthly rent payment
+2025-05-05,Grocery Shopping,102.35,Expense,Food,Groceries,Kroger,Credit Card,Weekly groceries
+2025-05-07,Home Improvement,87.50,Expense,Housing,Maintenance,Home Depot,Credit Card,Repairs and supplies
+2025-05-10,Netflix Subscription,15.99,Expense,Entertainment,Subscriptions,Netflix,Credit Card,Monthly streaming service
+2025-05-12,Gas for Car,45.25,Expense,Transportation,Gas,Shell,Credit Card,Filled up the tank
+2025-05-15,Transfer to Savings,200.00,Expense,Savings,Emergency Fund,Bank,Bank Transfer,Monthly savings contribution
+2025-05-15,Stock Purchase,300.00,Expense,Investments,Stocks,Brokerage,Bank Transfer,Index fund investment
+2025-05-18,Electricity Bill,82.15,Expense,Housing,Utilities,Electric Company,Bank Transfer,Monthly utility bill
+2025-05-20,Dinner Out,65.75,Expense,Food,Restaurants,Local Restaurant,Credit Card,Dinner with friends
+2025-05-22,Coffee,4.95,Expense,Food,Restaurants,Starbucks,Credit Card,Morning coffee
+2025-05-25,Internet Bill,65.00,Expense,Housing,Utilities,Internet Provider,Bank Transfer,Monthly internet service
+2025-05-27,Credit Card Payment,200.00,Expense,Debt,Credit Card,Bank,Bank Transfer,Monthly payment
+2025-05-30,Freelance Project,500.00,Income,Income,Freelance,Client ABC,Direct Deposit,Logo design project

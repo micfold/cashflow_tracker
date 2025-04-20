@@ -18,7 +18,6 @@ from .top_vendors_chart import generate_top_vendors_chart
 # Advanced chart generators
 from .daily_spending_chart import generate_daily_spending_chart
 from .weekday_spending_chart import generate_weekday_spending_chart
-from .transaction_distribution_chart import generate_transaction_distribution_chart
 from .budget_comparison_chart import generate_budget_comparison_chart
 from .cumulative_cashflow_chart import generate_cumulative_cashflow_chart
 
@@ -49,7 +48,6 @@ __all__ = ['create_visualisations',
            'generate_top_vendors_chart',
            'generate_daily_spending_chart',
            'generate_weekday_spending_chart',
-           'generate_transaction_distribution_chart',
            'generate_budget_comparison_chart',
            'generate_cumulative_cashflow_chart',
            'generate_monthly_category_proportion',

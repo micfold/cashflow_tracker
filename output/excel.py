@@ -105,15 +105,10 @@ def populate_category_sheet(wb: Workbook,
     # Convert lists to comma-separated strings
     for col in excel_data.columns:
         if excel_data[col].apply(lambda x: isinstance(x, list)).any():
-            excel_data[col] = excel_data[col].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
+            excel_data[col] = excel_data[col].apply(lambda x: ', '.join(map(str, x)) if isinstance(x, list) else x)
 
-    # Now use the modified dataframe for export
+    # Write the data (including header)
     for r_idx, row in enumerate(dataframe_to_rows(excel_data, index=False, header=True), 1):
-        for c_idx, value in enumerate(row, 1):
-            ws.cell(row=r_idx, column=c_idx, value=value)
-
-    # Convert data to Excel format
-    for r_idx, row in enumerate(dataframe_to_rows(category_data, index=False, header=True), 1):
         for c_idx, value in enumerate(row, 1):
             ws.cell(row=r_idx, column=c_idx, value=value)
 
@@ -123,16 +118,17 @@ def populate_category_sheet(wb: Workbook,
         cell.font = Font(bold=True)
         cell.alignment = Alignment(horizontal='center')
 
-    # Format budget column
+    # Format budget column (assuming column 4 is 'Budget Amount')
     for row in range(2, len(category_data) + 2):
-        cell = ws.cell(row=row, column=4)  # Budget column
-        if cell.value:
+        cell = ws.cell(row=row, column=4)
+        if isinstance(cell.value, (int, float)):
             cell.number_format = '#,##0.00'
 
-    # Auto-fit columns
+    # Auto-fit columns (rough approach since openpyxl doesn't auto-fit natively)
     for col in range(1, len(CategorySchema.get_columns()) + 1):
         column_letter = chr(64 + col)
-        ws.column_dimensions[column_letter].auto_size = True
+        ws.column_dimensions[column_letter].width = 20  # Manually set a decent width
+
 
 
 def populate_summary_sheet(wb: Workbook,

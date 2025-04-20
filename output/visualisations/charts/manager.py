@@ -26,12 +26,10 @@ from .monthly_category_proportion_chart import generate_monthly_category_proport
 # Advanced chart generators
 from .daily_spending_chart import generate_daily_spending_chart
 from .weekday_spending_chart import generate_weekday_spending_chart
-from .transaction_distribution_chart import generate_transaction_distribution_chart
 from .budget_comparison_chart import generate_budget_comparison_chart
 from .cumulative_cashflow_chart import generate_cumulative_cashflow_chart
 
 from .sankey_flow_chart import generate_sankey_flow_diagram
-from .radar_comparison_chart import generate_radar_chart
 
 # Import other chart modules as they're created
 # etc.
@@ -110,15 +108,13 @@ def create_visualisations(transaction_data: pd.DataFrame,
         # Advanced charts
         'daily_spending': lambda: generate_daily_spending_chart(expense_data, output_dir),
         'weekday_spending': lambda: generate_weekday_spending_chart(expense_data, output_dir),
-        'transaction_distribution': lambda: generate_transaction_distribution_chart(transaction_data, output_dir),
         'cumulative_cashflow': lambda: generate_cumulative_cashflow_chart(transaction_data, output_dir),
 
         'monthly_category_proportion': lambda: generate_monthly_category_proportion(expense_data, output_dir),
         'category_treemap': lambda: generate_category_treemap(expense_data, output_dir),
         'sankey_flow': lambda: generate_sankey_flow_diagram(expense_data, output_dir),
-        'radar_comparison': lambda: generate_radar_chart(expense_data, output_dir),
 
-        # Add more charts as they are implemented
+        # Add more charts as they are implemented,
         # etc.
     }
 

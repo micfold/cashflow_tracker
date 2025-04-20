@@ -5,7 +5,7 @@ Data processing functions for the Cashflow Tracker
 import pandas as pd
 import re
 from typing import Dict, List, Optional
-from cashflow_tracker.core.schema import TransactionSchema
+from core.schema import TransactionSchema
 
 
 def clean_transaction_data(df: pd.DataFrame, date_col: Optional[str] = None,

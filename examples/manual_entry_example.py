@@ -12,9 +12,9 @@ from datetime import datetime
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.schema import TransactionSchema
-from cashflow_tracker.core.ingestion import create_manual_transaction
-from cashflow_tracker.cli import main as tracker_main
+from core.schema import TransactionSchema
+from core.ingestion import create_manual_transaction
+from cli import main as tracker_main
 
 
 def enter_manual_transaction():
@@ -160,7 +160,7 @@ def main():
     print("\nOutput files:")
     print(f"  - {csv_file} (transaction data)")
     print(f"  - {excel_file} (Excel tracker)")
-    print(f"  - {output_dir}/charts/ (visualizations)")
+    print(f"  - {output_dir}/charts/ (visualisations)")
 
     print("\nSummary statistics:")
     total_income = transactions[transactions[TransactionSchema.TYPE] == 'Income'][TransactionSchema.AMOUNT].sum()

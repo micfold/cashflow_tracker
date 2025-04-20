@@ -11,7 +11,7 @@ from openpyxl.chart.label import DataLabelList
 from openpyxl.worksheet.datavalidation import DataValidation
 import pandas as pd
 from typing import Dict, Optional
-from cashflow_tracker.core.schema import TransactionSchema, CategorySchema
+from core.schema import TransactionSchema, CategorySchema
 
 
 def create_excel_workbook() -> Workbook:
@@ -98,6 +98,19 @@ def populate_category_sheet(wb: Workbook,
         category_data: DataFrame with category data
     """
     ws = wb["Categories"]
+
+    # Create a copy of the dataframe to avoid modifying the original
+    excel_data = category_data.copy()
+
+    # Convert lists to comma-separated strings
+    for col in excel_data.columns:
+        if excel_data[col].apply(lambda x: isinstance(x, list)).any():
+            excel_data[col] = excel_data[col].apply(lambda x: ', '.join(x) if isinstance(x, list) else x)
+
+    # Now use the modified dataframe for export
+    for r_idx, row in enumerate(dataframe_to_rows(excel_data, index=False, header=True), 1):
+        for c_idx, value in enumerate(row, 1):
+            ws.cell(row=r_idx, column=c_idx, value=value)
 
     # Convert data to Excel format
     for r_idx, row in enumerate(dataframe_to_rows(category_data, index=False, header=True), 1):

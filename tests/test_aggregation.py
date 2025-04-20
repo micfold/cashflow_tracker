@@ -10,12 +10,12 @@ from pathlib import Path
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.aggregation import (
+from core.aggregation import (
     aggregate_by_type, aggregate_by_category,
     aggregate_by_producer, aggregate_by_month,
     aggregate_by_payment_method, aggregate_by_subcategory
 )
-from cashflow_tracker.core.schema import TransactionSchema
+from core.schema import TransactionSchema
 
 
 class TestAggregation(unittest.TestCase):

@@ -9,7 +9,7 @@ The Cashflow Tracker is designed as a modular Python application that follows fu
 1. **Data Ingestion Layer**: Handles importing data from various sources
 2. **Data Processing Layer**: Cleans, normalizes, and categorizes data
 3. **Analysis Layer**: Aggregates and calculates financial metrics
-4. **Output Generation Layer**: Creates visualizations and exports data
+4. **Output Generation Layer**: Creates visualisations and exports data
 
 ## Components and Structure
 
@@ -20,7 +20,7 @@ The Cashflow Tracker is designed as a modular Python application that follows fu
 - **Processing Functions**: Components for cleaning, normalizing, and categorizing transactions
 - **Aggregation Functions**: Components for summarizing data in various ways
 - **Calculation Functions**: Components for deriving financial metrics
-- **Output Generation**: Components for creating Excel workbooks, charts, and visualizations
+- **Output Generation**: Components for creating Excel workbooks, charts, and visualisations
 
 ### Package Structure
 
@@ -37,7 +37,7 @@ cashflow_tracker/
 ├── output/                   # Output generation
 │   ├── excel.py              # Excel generation
 │   ├── charts.py             # Chart generation
-│   └── visualizations.py     # Matplotlib visualizations
+│   └── visualisations.py     # Matplotlib visualisations
 │
 └── utils/                    # Utility functions
     ├── defaults.py           # Default values
@@ -73,7 +73,7 @@ The Cashflow Tracker implements a functional data processing pipeline where data
 
 6. **Output Generation**:
    - Create formatted Excel workbooks
-   - Generate visualizations
+   - Generate visualisations
    - Export processed data
 
 ## Design Principles
@@ -101,7 +101,7 @@ Clear separation between data structures, processing logic, and presentation.
 The system is designed to be easily extended with new features, such as:
 - Additional data sources
 - New categorization rules
-- Different visualization types
+- Different visualisation types
 - Enhanced financial calculations
 
 ## Data Structures
@@ -168,12 +168,12 @@ Extend the categorization system in `processing.py`:
 - Natural language processing for descriptions
 - User-defined custom rules
 
-### 3. Visualizations
+### 3. visualisations
 
-Add new visualization types in `visualizations.py`:
+Add new visualisation types in `visualisations.py`:
 - Interactive charts
 - Geographic spending maps
-- Trend analysis visualizations
+- Trend analysis visualisations
 
 ### 4. Financial Analysis
 

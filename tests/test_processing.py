@@ -10,12 +10,12 @@ from pathlib import Path
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.processing import (
+from core.processing import (
     clean_transaction_data, categorize_transaction,
     categorize_all_transactions, extract_producer,
     extract_all_producers
 )
-from cashflow_tracker.core.schema import TransactionSchema
+from core.schema import TransactionSchema
 
 
 class TestProcessing(unittest.TestCase):

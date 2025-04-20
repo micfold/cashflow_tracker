@@ -4,7 +4,7 @@ Cashflow Tracker - A comprehensive tool for tracking and analyzing personal fina
 """
 import argparse
 import sys
-from cashflow_tracker.cli import main
+from cli import main
 
 if __name__ == "__main__":
     sys.exit(main())

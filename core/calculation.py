@@ -4,7 +4,7 @@ Financial calculation functions for the Cashflow Tracker
 
 import pandas as pd
 from typing import Dict, Optional
-from cashflow_tracker.core.schema import TransactionSchema, CategorySchema
+from core.schema import TransactionSchema, CategorySchema
 
 
 def calculate_net_cashflow(income: float, expense: float) -> float:

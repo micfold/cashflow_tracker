@@ -10,20 +10,20 @@ from pathlib import Path
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.utils.defaults import generate_sample_transactions
-from cashflow_tracker.core.processing import (
+from utils.defaults import generate_sample_transactions
+from core.processing import (
     clean_transaction_data, categorize_all_transactions, extract_all_producers
 )
-from cashflow_tracker.core.aggregation import (
+from core.aggregation import (
     aggregate_by_type, aggregate_by_category, aggregate_by_producer
 )
-from cashflow_tracker.core.calculation import (
+from core.calculation import (
     calculate_net_cashflow, calculate_cash_allocation
 )
-from cashflow_tracker.utils.defaults import (
+from utils.defaults import (
     create_category_rules, create_producer_patterns
 )
-from cashflow_tracker.output.visualisations import create_matplotlib_charts
+from output.visualisations import create_visualisations
 
 
 def main():
@@ -75,10 +75,10 @@ def main():
     for i, row in enumerate(expense_categories.head(5).itertuples(), 1):
         print(f"{i}. {row.Category}: ${row.Amount:.2f}")
 
-    # Create visualizations
+    # Create visualisations
     output_dir = 'sample_charts'
     print(f"\nGenerating charts in '{output_dir}' directory...")
-    create_matplotlib_charts(transactions, output_dir)
+    create_visualisations(transactions, output_dir)
     print("Charts generated successfully!")
 
     # Save the transactions to CSV

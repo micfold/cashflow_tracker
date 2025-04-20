@@ -6,7 +6,7 @@ import pandas as pd
 import random
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
-from cashflow_tracker.core.schema import TransactionSchema, CategorySchema
+from core.schema import TransactionSchema, CategorySchema
 
 
 def create_default_categories() -> pd.DataFrame:

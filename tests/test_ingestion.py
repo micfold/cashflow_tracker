@@ -12,10 +12,10 @@ import sys
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.ingestion import (
+from core.ingestion import (
     ingest_csv, ingest_excel, create_manual_transaction
 )
-from cashflow_tracker.core.schema import TransactionSchema
+from core.schema import TransactionSchema
 
 
 class TestIngestion(unittest.TestCase):

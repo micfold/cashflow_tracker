@@ -9,7 +9,7 @@ Cashflow Tracker is a powerful tool designed to help you manage your personal fi
 - **Automated transaction categorization** based on description and vendor
 - **Cash allocation analysis** showing spending, saving, and investing distribution
 - **Budget comparison** to track spending against your financial goals
-- **Beautiful visualizations** including pie charts, bar charts, and trend analysis
+- **Beautiful visualisations** including pie charts, bar charts, and trend analysis
 - **Excel report generation** for complete financial overview
 
 ## Features
@@ -19,7 +19,7 @@ Cashflow Tracker is a powerful tool designed to help you manage your personal fi
 - 📈 **Financial Analysis**: Calculate key metrics like net cashflow and savings rate
 - 📝 **Budget Tracking**: Compare actual spending with budget targets
 - 📱 **Vendor Analysis**: Track spending by vendor/producer
-- 📷 **Data Visualization**: Generate informative charts and graphs
+- 📷 **Data visualisation**: Generate informative charts and graphs
 - 📑 **Reporting**: Export formatted Excel workbooks with interactive charts
 
 ## Installation
@@ -54,17 +54,16 @@ cashflow-tracker --sample --output my_finances.xlsx
 # Process your own transaction data
 cashflow-tracker --input my_transactions.csv --output my_finances.xlsx
 
-# Generate additional charts and visualizations
+# Generate additional charts and visualisations
 cashflow-tracker --input my_transactions.csv --charts
 ```
 
 ### Python Script Usage
 
 ```python
-from cashflow_tracker.utils.defaults import generate_sample_transactions
-from cashflow_tracker.core.processing import clean_transaction_data
-from cashflow_tracker.core.aggregation import aggregate_by_type
-from cashflow_tracker.output.excel import create_excel_workbook, populate_transaction_sheet
+from utils.defaults import generate_sample_transactions
+from core.processing import clean_transaction_data
+from output.excel import create_excel_workbook, populate_transaction_sheet
 
 # Generate sample data
 transactions = generate_sample_transactions(num_transactions=100)
@@ -103,7 +102,7 @@ The `examples/` directory contains several example scripts:
 - `sample_data_example.py`: Working with sample data
 - `bank_statement_example.py`: Processing bank statements
 - `manual_entry_example.py`: Manual transaction entry
-- `visualization_example.py`: Creating advanced visualizations
+- `visualisation_example.py`: Creating advanced visualisations
 
 ## Project Structure
 
@@ -121,7 +120,7 @@ cashflow_tracker/
 │   ├── output/                  # Output generation
 │   │   ├── excel.py             # Excel generation
 │   │   ├── charts.py            # Chart generation
-│   │   └── visualizations.py    # Matplotlib visualizations
+│   │   └── visualisations.py    # Matplotlib visualisations
 │   │
 │   └── utils/                   # Utility functions
 │       ├── defaults.py          # Default values

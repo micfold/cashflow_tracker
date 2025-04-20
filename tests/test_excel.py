@@ -13,8 +13,8 @@ from pathlib import Path
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.schema import TransactionSchema, CategorySchema
-from cashflow_tracker.output.excel import (
+from core.schema import TransactionSchema, CategorySchema
+from output.excel import (
     create_excel_workbook, populate_transaction_sheet,
     populate_category_sheet, populate_summary_sheet,
     create_charts

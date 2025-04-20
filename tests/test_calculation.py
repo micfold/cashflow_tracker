@@ -10,11 +10,11 @@ from pathlib import Path
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.calculation import (
+from core.calculation import (
     calculate_net_cashflow, calculate_cash_allocation,
     calculate_budget_comparison, calculate_savings_rate
 )
-from cashflow_tracker.core.schema import TransactionSchema, CategorySchema
+from core.schema import TransactionSchema, CategorySchema
 
 
 class TestCalculation(unittest.TestCase):

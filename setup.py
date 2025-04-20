@@ -22,7 +22,7 @@ setup(
     version="0.1.0",
     author="Michael Foldyna",
     author_email="michael.foldyna@outlook.com",
-    description="A comprehensive cashflow tracking and visualization system",
+    description="A comprehensive cashflow tracking and visualisation system",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/micfold/cashflow_tracker",
@@ -56,7 +56,7 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "cashflow-tracker=cashflow_tracker.cli:main",
+            "cashflow-tracker=cli:main",
         ],
     },
 )

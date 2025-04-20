@@ -5,24 +5,24 @@ Command-line interface for the Cashflow Tracker
 import argparse
 import os
 import pandas as pd
-from cashflow_tracker.core.schema import TransactionSchema
-from cashflow_tracker.core.ingestion import ingest_csv, ingest_excel
-from cashflow_tracker.core.processing import (
+from core.schema import TransactionSchema
+from core.ingestion import ingest_csv, ingest_excel
+from core.processing import (
     clean_transaction_data, categorize_all_transactions, extract_all_producers
 )
-from cashflow_tracker.core.aggregation import (
+from core.aggregation import (
     aggregate_by_type, aggregate_by_category,
     aggregate_by_producer, aggregate_by_month
 )
-from cashflow_tracker.core.calculation import (
+from core.calculation import (
     calculate_net_cashflow, calculate_cash_allocation, calculate_budget_comparison
 )
-from cashflow_tracker.output.excel import (
+from output.excel import (
     create_excel_workbook, populate_transaction_sheet,
     populate_category_sheet, populate_summary_sheet, create_charts
 )
-from cashflow_tracker.output.visualisations import create_matplotlib_charts
-from cashflow_tracker.utils.defaults import (
+from output.visualisations import create_visualisations
+from utils.defaults import (
     create_default_categories, create_category_rules,
     create_producer_patterns, generate_sample_transactions
 )
@@ -34,7 +34,7 @@ def main():
     """
     parser = argparse.ArgumentParser(description='Cashflow Tracker')
     parser.add_argument('--input', help='Input file path (CSV or Excel)')
-    parser.add_argument('--output', default='cashflow_tracker.xlsx',
+    parser.add_argument('--output', default='xlsx',
                         help='Output Excel file path')
     parser.add_argument('--sample', action='store_true',
                         help='Generate sample data')
@@ -113,7 +113,7 @@ def main():
         print(f"Generating additional charts in '{args.charts_dir}'...")
         if not os.path.exists(args.charts_dir):
             os.makedirs(args.charts_dir)
-        create_matplotlib_charts(transaction_data, args.charts_dir)
+        create_visualisations(transaction_data, args.charts_dir)
 
     print("Done!")
     return 0

@@ -10,14 +10,14 @@ from pathlib import Path
 # Add parent directory to path to import package
 sys.path.append(str(Path(__file__).parent.parent))
 
-from cashflow_tracker.core.schema import TransactionSchema
-from cashflow_tracker.core.processing import (
+from core.schema import TransactionSchema
+from core.processing import (
     clean_transaction_data, categorize_all_transactions, extract_all_producers
 )
-from cashflow_tracker.utils.defaults import (
+from utils.defaults import (
     create_category_rules, create_producer_patterns
 )
-from cashflow_tracker.cli import main as tracker_main
+from cli import main as tracker_main
 
 
 def create_sample_bank_statement():
@@ -133,7 +133,7 @@ def main():
     print("  - sample_bank_statement.csv (raw bank data)")
     print("  - processed_bank_statement.csv (categorized transactions)")
     print("  - bank_statement_tracker.xlsx (Excel tracker)")
-    print("  - charts/ (visualizations)")
+    print("  - charts/ (visualisations)")
 
 
 if __name__ == "__main__":

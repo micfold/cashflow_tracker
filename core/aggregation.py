@@ -4,7 +4,7 @@ Data aggregation functions for the Cashflow Tracker
 
 import pandas as pd
 from typing import Dict
-from cashflow_tracker.core.schema import TransactionSchema
+from core.schema import TransactionSchema
 
 
 def aggregate_by_type(df: pd.DataFrame) -> Dict[str, float]:

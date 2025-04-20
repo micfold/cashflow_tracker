@@ -7,10 +7,10 @@ This document provides practical examples of using the Cashflow Tracker for vari
 This example demonstrates how to generate and analyze sample data.
 
 ```python
-from cashflow_tracker.utils.defaults import generate_sample_transactions
-from cashflow_tracker.core.processing import clean_transaction_data
-from cashflow_tracker.core.aggregation import aggregate_by_type
-from cashflow_tracker.output.excel import create_excel_workbook, populate_transaction_sheet
+from utils.defaults import generate_sample_transactions
+from core.processing import clean_transaction_data
+from core.aggregation import aggregate_by_type
+from output.excel import create_excel_workbook, populate_transaction_sheet
 
 # Generate sample data (100 transactions)
 transactions = generate_sample_transactions(num_transactions=100)
@@ -36,14 +36,14 @@ This example shows how to process a bank statement CSV file.
 
 ```python
 import pandas as pd
-from cashflow_tracker.core.schema import TransactionSchema
-from cashflow_tracker.core.processing import (
+from core.schema import TransactionSchema
+from core.processing import (
     clean_transaction_data, categorize_all_transactions, extract_all_producers
 )
-from cashflow_tracker.utils.defaults import (
+from utils.defaults import (
     create_category_rules, create_producer_patterns
 )
-from cashflow_tracker.cli import main as tracker_main
+from cli import main as tracker_main
 
 # Read the bank statement
 bank_data = pd.read_csv("bank_statement.csv")
@@ -101,17 +101,17 @@ This example demonstrates manual transaction entry.
 
 ```python
 import pandas as pd
-from cashflow_tracker.core.schema import TransactionSchema
-from cashflow_tracker.core.ingestion import create_manual_transaction
-from cashflow_tracker.output.excel import (
+from core.schema import TransactionSchema
+from core.ingestion import create_manual_transaction
+from output.excel import (
     create_excel_workbook, populate_transaction_sheet,
     populate_category_sheet, populate_summary_sheet, create_charts
 )
-from cashflow_tracker.utils.defaults import create_default_categories
-from cashflow_tracker.core.aggregation import (
+from utils.defaults import create_default_categories
+from core.aggregation import (
     aggregate_by_type, aggregate_by_category, aggregate_by_month
 )
-from cashflow_tracker.core.calculation import calculate_cash_allocation
+from core.calculation import calculate_cash_allocation
 
 # Create transactions DataFrame
 transactions = pd.DataFrame(columns=TransactionSchema.get_columns())
@@ -169,18 +169,18 @@ create_charts(wb, category_summary, cash_allocation, monthly_summary)
 wb.save("manual_tracker.xlsx")
 ```
 
-## Example 4: Advanced Visualizations
+## Example 4: Advanced visualisations
 
-This example shows how to create advanced visualizations.
+This example shows how to create advanced visualisations.
 
 ```python
 import pandas as pd
 import os
-from cashflow_tracker.utils.defaults import generate_sample_transactions
-from cashflow_tracker.output.visualisations import (
-    create_matplotlib_charts, create_advanced_visualizations
+from utils.defaults import generate_sample_transactions
+from output.visualisations import (
+    create_visualisations, create_advanced_visualisations
 )
-from cashflow_tracker.utils.defaults import create_default_categories
+from utils.defaults import create_default_categories
 
 # Generate sample data
 transactions = generate_sample_transactions(num_transactions=200)
@@ -191,11 +191,11 @@ if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
 # Generate standard charts
-create_matplotlib_charts(transactions, output_dir)
+create_visualisations(transactions, output_dir)
 
 # Generate advanced charts
 categories = create_default_categories()
-create_advanced_visualizations(transactions, output_dir, categories)
+create_advanced_visualisations(transactions, output_dir, categories)
 
 print(f"Charts generated in '{output_dir}' directory")
 ```
@@ -206,11 +206,11 @@ This example demonstrates budget analysis.
 
 ```python
 import pandas as pd
-from cashflow_tracker.utils.defaults import (
+from utils.defaults import (
     generate_sample_transactions, create_default_categories
 )
-from cashflow_tracker.core.calculation import calculate_budget_comparison
-from cashflow_tracker.core.aggregation import aggregate_by_category
+from core.calculation import calculate_budget_comparison
+from core.aggregation import aggregate_by_category
 import matplotlib.pyplot as plt
 
 # Generate sample data

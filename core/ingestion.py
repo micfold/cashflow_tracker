@@ -4,7 +4,7 @@ Data ingestion functions for the Cashflow Tracker
 
 import pandas as pd
 from typing import Optional
-from cashflow_tracker.core.schema import TransactionSchema
+from core.schema import TransactionSchema
 
 
 def ingest_csv(file_path: str) -> pd.DataFrame:

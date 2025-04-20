@@ -47,7 +47,7 @@ python -m cashflow_tracker --sample --output my_finances.xlsx
 python -m cashflow_tracker --input my_transactions.csv --output my_finances.xlsx
 ```
 
-#### Generate charts and visualizations
+#### Generate charts and visualisations
 
 ```bash
 python -m cashflow_tracker --input my_transactions.csv --charts
@@ -100,7 +100,7 @@ When importing bank statements, the system will:
 You can add transactions programmatically:
 
 ```python
-from cashflow_tracker.core.ingestion import create_manual_transaction
+from core.ingestion import create_manual_transaction
 import pandas as pd
 
 # Create a new transaction
@@ -128,8 +128,8 @@ transactions.to_csv("my_transactions.csv", index=False)
 The Cashflow Tracker automatically categorizes transactions based on keywords in the description. You can customize the categorization rules:
 
 ```python
-from cashflow_tracker.utils.defaults import create_category_rules
-from cashflow_tracker.core.processing import categorize_all_transactions
+from utils.defaults import create_category_rules
+from core.processing import categorize_all_transactions
 import pandas as pd
 
 # Load transactions
@@ -155,8 +155,8 @@ categorized_transactions.to_csv("categorized_transactions.csv", index=False)
 To perform basic financial analysis:
 
 ```python
-from cashflow_tracker.core.aggregation import aggregate_by_type, aggregate_by_category
-from cashflow_tracker.core.calculation import calculate_net_cashflow, calculate_cash_allocation
+from core.aggregation import aggregate_by_type, aggregate_by_category
+from core.calculation import calculate_net_cashflow, calculate_cash_allocation
 import pandas as pd
 
 # Load transactions
@@ -193,8 +193,8 @@ print(f"Investing: {cash_allocation.get('Investing', 0):.1f}%")
 For more advanced analysis, use the specialized functions:
 
 ```python
-from cashflow_tracker.core.aggregation import aggregate_by_month, aggregate_by_producer
-from cashflow_tracker.core.calculation import calculate_savings_rate
+from core.aggregation import aggregate_by_month, aggregate_by_producer
+from core.calculation import calculate_savings_rate
 import pandas as pd
 
 # Load transactions
@@ -227,22 +227,22 @@ savings_rate = calculate_savings_rate(income, regular_expenses)
 print(f"\nSavings Rate: {savings_rate:.1f}%")
 ```
 
-## Generating Reports and Visualizations
+## Generating Reports and visualisations
 
 ### Excel Reports
 
 To generate a comprehensive Excel report:
 
 ```python
-from cashflow_tracker.output.excel import (
+from output.excel import (
     create_excel_workbook, populate_transaction_sheet,
     populate_category_sheet, populate_summary_sheet, create_charts
 )
-from cashflow_tracker.utils.defaults import create_default_categories
-from cashflow_tracker.core.aggregation import (
+from utils.defaults import create_default_categories
+from core.aggregation import (
     aggregate_by_type, aggregate_by_category, aggregate_by_month
 )
-from cashflow_tracker.core.calculation import calculate_cash_allocation
+from core.calculation import calculate_cash_allocation
 import pandas as pd
 
 # Load transactions
@@ -274,15 +274,15 @@ create_charts(wb, category_summary, cash_allocation, monthly_summary)
 wb.save("financial_report.xlsx")
 ```
 
-### Visualizations
+### visualisations
 
-To generate visualizations:
+To generate visualisations:
 
 ```python
-from cashflow_tracker.output.visualisations import (
-    create_matplotlib_charts, create_advanced_visualizations
+from output.visualisations import (
+    create_visualisations, create_advanced_visualisations
 )
-from cashflow_tracker.utils.defaults import create_default_categories
+from utils.defaults import create_default_categories
 import pandas as pd
 import os
 
@@ -295,11 +295,11 @@ if not os.path.exists(output_dir):
 transactions = pd.read_csv("my_transactions.csv")
 
 # Generate basic charts
-create_matplotlib_charts(transactions, output_dir)
+create_visualisations(transactions, output_dir)
 
-# Generate advanced visualizations
+# Generate advanced visualisations
 categories = create_default_categories()
-create_advanced_visualizations(transactions, output_dir, categories)
+create_advanced_visualisations(transactions, output_dir, categories)
 
 print(f"Charts generated in '{output_dir}' directory")
 ```
@@ -311,7 +311,7 @@ print(f"Charts generated in '{output_dir}' directory")
 To customize the category system:
 
 ```python
-from cashflow_tracker.utils.defaults import create_default_categories
+from utils.defaults import create_default_categories
 import pandas as pd
 
 # Get default categories
@@ -331,9 +331,9 @@ categories = pd.concat([categories, new_row], ignore_index=True)
 categories.to_csv("custom_categories.csv", index=False)
 ```
 
-### Creating Custom Visualizations
+### Creating Custom visualisations
 
-To create custom visualizations:
+To create custom visualisations:
 
 ```python
 import matplotlib.pyplot as plt
@@ -349,12 +349,12 @@ transactions['Date'] = pd.to_datetime(transactions['Date'])
 # Extract year-month
 transactions['Month'] = transactions['Date'].dt.strftime('%Y-%m')
 
-# Create a custom visualization
+# Create a custom visualisation
 plt.figure(figsize=(12, 6))
 expense_data = transactions[transactions['Type'] == 'Expense']
 monthly_spending = expense_data.groupby(['Month', 'Category'])['Amount'].sum().reset_index()
 
-# Create a pivot table for better visualization
+# Create a pivot table for better visualisation
 pivot_data = monthly_spending.pivot_table(
     index='Month',
     columns='Category',

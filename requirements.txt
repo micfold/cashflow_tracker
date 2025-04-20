@@ -6,3 +6,4 @@ schema~=0.7.7
 numpy~=2.2.4
 setuptools~=78.1.0
 squarify~=0.4.4
+plotly>=5.0.0
